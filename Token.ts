@@ -13,7 +13,7 @@ export abstract class Token {
     this.position = [index, index + 1];
   }
 
-  canConcat(_char: string) {
+  canConcat(_char: string): boolean {
     // It must be implemented for tokens that support concatenation.
     return false;
   }
