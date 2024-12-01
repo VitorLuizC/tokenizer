@@ -4,14 +4,10 @@ import type { TokenConstructor } from "./TokenConstructor.ts";
 export abstract class Token {
   abstract type: TokenType;
 
-  source: string;
-
-  position: [number, number];
-
-  constructor(char: string, index: number) {
-    this.source = char;
-    this.position = [index, index + 1];
-  }
+  constructor(
+    public source: string,
+    public position: [number, number]
+  ) {}
 
   canConcat(_char: string): boolean {
     // It must be implemented for tokens that support concatenation.
@@ -28,7 +24,7 @@ export abstract class Token {
     char: string,
     index: number,
   ): T {
-    return new this(char, index);
+    return new this(char, [index, index + 1]);
   }
 
   static test(_char: string): boolean {
