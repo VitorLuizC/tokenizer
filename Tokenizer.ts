@@ -13,8 +13,10 @@ export class Tokenizer {
   tokenize(source: string): Token[] {
     const tokens: Token[] = [];
 
-    for (let index = 0; index < source.length; index++) {
-      const char = source[index];
+    const chars = source.normalize('NFKC');
+
+    for (let index = 0; index < chars.length; index++) {
+      const char = chars[index];
 
       const previousToken = tokens.at(-1);
 
