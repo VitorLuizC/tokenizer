@@ -9,6 +9,6 @@ export class WhiteSpaceToken extends Token {
   }
 
   static override test(char: string): boolean {
-    return /^\s$/.test(char);
+    return /^\ |\u00A0|[\u2000-\u200B]$/.test(char);
   }
 }
