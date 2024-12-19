@@ -1,7 +1,7 @@
 import type { TokenType } from "./TokenType.ts";
 
 export interface TokenConstructor<T extends Token> {
-  new(source: string, position: [number, number]): T;
+  new (source: string, position: [number, number]): T;
   test(char: string): boolean;
   create(char: string, index: number): T;
 }
@@ -11,7 +11,7 @@ export abstract class Token {
 
   constructor(
     public source: string,
-    public position: [number, number]
+    public position: [number, number],
   ) {}
 
   canConcat(_char: string): boolean {

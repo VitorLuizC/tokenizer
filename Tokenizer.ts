@@ -12,7 +12,7 @@ export class Tokenizer {
   tokenize(source: string): Token[] {
     const tokens: Token[] = [];
 
-    const chars = source.normalize('NFKC');
+    const chars = source.normalize("NFKC");
 
     for (let index = 0; index < chars.length; index++) {
       const char = chars[index];
