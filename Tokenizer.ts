@@ -1,5 +1,4 @@
-import type { Token } from "./Token.ts";
-import type { TokenConstructor } from "./TokenConstructor.ts";
+import type { Token, TokenConstructor } from "./Token.ts";
 
 export class Tokenizer {
   // deno-lint-ignore no-explicit-any

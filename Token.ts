@@ -1,5 +1,10 @@
 import type { TokenType } from "./TokenType.ts";
-import type { TokenConstructor } from "./TokenConstructor.ts";
+
+export interface TokenConstructor<T extends Token> {
+  new(source: string, position: [number, number]): T;
+  test(char: string): boolean;
+  create(char: string, index: number): T;
+}
 
 export abstract class Token {
   abstract type: TokenType;
